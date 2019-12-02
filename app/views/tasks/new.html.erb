@@ -1,2 +1,37 @@
-<h1>Tasks#new</h1>
-<p>Find me in app/views/tasks/new.html.erb</p>
+<div class = "main" >
+  <div class = "header">
+    <div class = "header__left">
+      <h1 class = "app-name">TimeManagementApp</h1>
+      <i class="fas fa-stopwatch"></i>
+    </div>
+  </div>
+  <div class = "contents">
+    <h1 class = "new-task">New Task</h1>
+    <%= form_with model: @task do |form| %>
+      <div class = "form-group">
+        <div class = "task-name">
+          <%= label_tag "form-name", "Task Name" %>
+          <%= form.text_field :name, id:"form-name", placeholder:"Type a Task Name" %> 
+        </div>
+        <div class = "colors">
+          <div class = "color-label">
+            <%= label_tag "form-color", "Color" %>
+          </div>
+          <div class = "color-field">
+            <%= form.color_field :color, id:"form-color" %>
+          </div>
+        </div>
+        <div class = "select-btn">
+          <div class = "green" >
+            <%= form.submit 'Create', class: "btn btn-success" %>
+          </div>
+          <div class = "red">
+            <%= link_to root_path do %> 
+              <button class = "btn btn-danger">Back</button>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,12 +1,21 @@
 <div class = "main" >
   <div class = "header">
     <div class = "header__left">
-      <p class = "app-name"></p>
-      
+      <h1 class = "app-name">TimeManagementApp</h1>
+      <i class="fas fa-stopwatch"></i>
     </div>
     <div class = "header__right">
+      <%= link_to new_task_path, method: :get do %>
+        <i class="fas fa-plus"></i>
+      <% end %>
     </div>
-
-
+  </div>
+  <div class = task-contents>
+    <% @tasks.each do |task| %>
+      <div class = "task-content", style="background-color:<%= task.color %>">
+        <i class = "fas fa-play" ></i>
+        <p class = "content-name" ><%= task.name %></p>
+      </div>
+    <% end %>
   </div>
 </div>

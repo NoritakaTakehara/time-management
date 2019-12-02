@@ -1,3 +1,7 @@
-@import "modules/reset.css";
+@import "./reset";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import 'tasks/index';
+// @import 'tasks/new';
